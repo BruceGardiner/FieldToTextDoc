@@ -1,0 +1,22 @@
+﻿<Page
+    x:Class="FieldToTextDoc.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:FieldToTextDoc"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <TextBlock Text="Name" Margin="20,20,0,0"
+                   FontSize="30"/>
+        <TextBox x:Name="name" Margin="120,20,0,0" Width="200" Height="50" 
+                 VerticalAlignment="Top" HorizontalAlignment="Left"/>
+
+        <Button x:Name="AddToTextDoc" Content="Save" Margin="350,20,0,0" Width="100" Height="50"
+                VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30"
+                Click="AddToTextDoc_Click"/>
+
+    </Grid>
+</Page>
