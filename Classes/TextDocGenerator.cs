@@ -1,8 +1,4 @@
-﻿using System;
-using System.IO;
-using System.Runtime.CompilerServices;
-
-namespace FieldToTextDoc.Classes
+﻿namespace FieldToTextDoc.Classes
 {
     // These examples assume a "C:\Users\Public\TestFolder" folder on your machine.
     // You can modify the path if necessary.

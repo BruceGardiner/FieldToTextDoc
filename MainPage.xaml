@@ -9,14 +9,31 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <TextBlock Text="Name" Margin="20,20,0,0"
-                   FontSize="30"/>
-        <TextBox x:Name="name" Margin="120,20,0,0" Width="200" Height="50" 
+        <TextBlock Text="Name" Margin="20,50,0,0"
+                   FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox x:Name="name" Margin="120,50,0,0" Width="200" Height="50" 
                  VerticalAlignment="Top" HorizontalAlignment="Left"/>
-
-        <Button x:Name="AddToTextDoc" Content="Save" Margin="350,20,0,0" Width="100" Height="50"
+        <Button x:Name="AddToTextDoc" Content="Save" Margin="350,50,0,0" Width="150" Height="50"
                 VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30"
                 Click="AddToTextDoc_Click"/>
+        <TextBlock Text="Age" Margin="20,100,0,0"
+                   FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox x:Name="age" Margin="120,100,0,0" Width="200" Height="50" 
+                 VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        
+
+        <TextBlock Text="Name2" Margin="20,200,0,0"
+                   FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox x:Name="name2" Margin="120,200,0,0" Width="200" Height="50" 
+                 VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button x:Name="ApendToTextDoc" Content="Append" Margin="350,200,0,0" Width="150" Height="50"
+                VerticalAlignment="Top" HorizontalAlignment="Left" FontSize="30"
+                Click="ApendToTextDoc_Click"/>
+        <TextBlock Text="Age2" Margin="20,250,0,0"
+                   FontSize="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <TextBox x:Name="age2" Margin="120,250,0,0" Width="200" Height="50" 
+                 VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        
 
     </Grid>
 </Page>
