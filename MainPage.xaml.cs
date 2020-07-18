@@ -14,7 +14,7 @@ namespace FieldToTextDoc
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private StorageFolder pickedFolder;
+        //private StorageFolder pickedFolder;
 
         public MainPage()
         {
@@ -31,12 +31,16 @@ namespace FieldToTextDoc
             string[] lines = {name, age};
             try
             {
-                var fp = new FolderPicker {SuggestedStartLocation = PickerLocationId.DocumentsLibrary};
-                fp.FileTypeFilter.Add("*");
-                pickedFolder = await fp.PickSingleFolderAsync();
+                // var fp = new FolderPicker {SuggestedStartLocation = PickerLocationId.DocumentsLibrary};
+                // fp.FileTypeFilter.Add("*");
+                // pickedFolder = await fp.PickSingleFolderAsync();
+                var pickedFolder = ApplicationData.Current.LocalFolder;
                 var sampleFile = await pickedFolder.CreateFileAsync("WriteLines.txt",
                     CreationCollisionOption.ReplaceExisting);
                 await FileIO.WriteTextAsync(sampleFile, string.Join(Environment.NewLine, lines));
+
+                var result = await FileIO.ReadLinesAsync(sampleFile);
+                ResultsBox.Text = string.Join(Environment.NewLine, result);
             }
             catch (Exception ex)
             {
@@ -57,12 +61,16 @@ namespace FieldToTextDoc
             // The using statement automatically flushes AND CLOSES the stream and calls
             // IDisposable.Dispose on the stream object.
 
-            if (pickedFolder == null) return;
+  
 
             var lines = new[] {name2, age2};
             var text = $"{Environment.NewLine}{string.Join(Environment.NewLine, lines)}";
+            var pickedFolder = ApplicationData.Current.LocalFolder;
             var pickedFile = await pickedFolder.GetFileAsync("WriteLines.txt");
             await FileIO.AppendTextAsync(pickedFile, text);
+
+            var result = await FileIO.ReadLinesAsync(pickedFile);
+            ResultsBox.Text = string.Join(Environment.NewLine, result);
         }
     }
 }
